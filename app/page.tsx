@@ -59,6 +59,7 @@ const xBorderBottomColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.c
 
 const s = stylex.create({
   main: {
+    backgroundColor: $.success,
     display: "flex",
     flexDirection: "column",
     alignItems: "center",

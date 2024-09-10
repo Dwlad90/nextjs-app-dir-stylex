@@ -194,6 +194,49 @@ export const spacing = stylex.defineVars({
  */
 const DARK_MODE = "@media (prefers-color-scheme: dark)";
 
+export const colors = stylex.defineVars({
+  teal_50: "#ccf1f5",
+  teal_100: "#99e3eb",
+  teal_200: "#66d6e0",
+  teal_300: "#33c8d6",
+  teal_400: "#1ac1d1",
+  teal_500: "#00bacc",
+  teal_600: "#00a7b8",
+  teal_700: "#00828f",
+  teal_800: "#005d66",
+  teal_900: "#00383d",
+  green_50: "#e3f5db",
+  green_100: "#c7ebb7",
+  green_200: "#abe092",
+  green_300: "#8fd66e",
+  green_400: "#81d15c",
+  green_500: "#73cc4a",
+  green_600: "#68b843",
+  green_700: "#518f34",
+  green_800: "#3a6625",
+  green_900: "#233d16",
+  yellow_50: "#fef2cc",
+  yellow_100: "#fde699",
+  yellow_200: "#fdd966",
+  yellow_300: "#fccd33",
+  yellow_400: "#fbc61a",
+  yellow_500: "#fbc000",
+  yellow_600: "#e2ad00",
+  yellow_700: "#b08600",
+  yellow_800: "#7e6000",
+  yellow_900: "#4b3a00",
+  red_50: "#fbcfd2",
+  red_100: "#f79fa5",
+  red_200: "#f27079",
+  red_300: "#ee404c",
+  red_400: "#ec2835",
+  red_500: "#ea101f",
+  red_600: "#d30e1c",
+  red_700: "#a40b16",
+  red_800: "#750810",
+  red_900: "#460509",
+});
+
 export const globalTokens = stylex.defineVars({
   maxWidth: `${MAX_WIDTH}px`,
   fontMono: [
@@ -263,4 +306,8 @@ export const globalTokens = stylex.defineVars({
     default: "radial-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))",
     [DARK_MODE]: `linear-gradient(to bottom right, rgba(1, 65, 255, 0), rgba(1, 65, 255, 0), rgba(1, 65, 255, 0.3))`,
   },
+  success: colors.green_500,
+  warning: colors.yellow_500,
+  critical: colors.red_500,
+  info: colors.teal_500,
 });
