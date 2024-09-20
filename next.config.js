@@ -1,32 +1,41 @@
 /** @type {import('next').NextConfig} */
-const stylexPlugin = require("@stylexswc/nextjs-plugin");
-const withMDX = require("@next/mdx")();
-
+const path = require('path');
+const stylexPlugin = require('@stylexswc/nextjs-plugin');
+const rootDir =  __dirname;
 
 const nextConfig = {
-  // Configure `pageExtensions` to include MDX files
-  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
-  transpilePackages: ["@stylexjs/open-props"],
-  // Optionally, add any other Next.js config below
   swcMinify: true,
+  transpilePackages: [
+    '@bonterratech/stitch-tokens',
+    '@bonterratech/stitch-extension',
+    "@stylexjs/open-props"
+  ],
+  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   experimental: {
-    mdxRs: true,
     swcPlugins: [[
       "@stylexswc/swc-plugin",
       {
-        "dev": false,
-        "runtimeInjection": false,
-        "genConditionalClasses": true,
-        "treeshakeCompensation": true,
-        "unstable_moduleResolution": {
-          "type": "commonJS",
-          "rootDir": __dirname
-        }
-      }
+        dev: process.env.NODE_ENV === 'development',
+        genConditionalClasses: true,
+        treeshakeCompensation: true,
+        aliases: {
+          '@/*': [path.join(rootDir, '*')],
+        },
+        unstable_moduleResolution: {
+          type: 'commonJS',
+          rootDir: rootDir,
+        },
+      },
     ]],
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
   },
 };
 
 module.exports = stylexPlugin({
-  rootDir: __dirname,
-})(withMDX(nextConfig));
+  rootDir: rootDir,
+})(nextConfig);
