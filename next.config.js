@@ -11,19 +11,19 @@ const nextConfig = {
   swcMinify: true,
   experimental: {
     mdxRs: true,
-    swcPlugins: [[
-      "@stylexswc/swc-plugin",
-      {
-        "dev": false,
-        "runtimeInjection": false,
-        "genConditionalClasses": true,
-        "treeshakeCompensation": true,
-        "unstable_moduleResolution": {
-          "type": "commonJS",
-          "rootDir": __dirname
-        }
-      }
-    ]],
+    // swcPlugins: [[
+    //   "@stylexswc/swc-plugin",
+    //   {
+    //     "dev": false,
+    //     "runtimeInjection": false,
+    //     "genConditionalClasses": true,
+    //     "treeshakeCompensation": true,
+    //     "unstable_moduleResolution": {
+    //       "type": "commonJS",
+    //       "rootDir": __dirname
+    //     }
+    //   }
+    // ]],
   },
 };
 
