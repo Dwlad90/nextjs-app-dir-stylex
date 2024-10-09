@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const stylexPlugin = require("@stylexswc/nextjs-plugin");
+const stylexPlugin = require("@stylexswc/nextjs-swc-plugin");
 const withMDX = require("@next/mdx")();
 
 
